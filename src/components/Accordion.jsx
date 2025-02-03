@@ -23,20 +23,27 @@ export default function Accordion() {
     ]
 
     const [showCard, setShowCard] = useState([false, false, false, false]);
-
+    const [multiSelection, setMultiSelection] = useState(false);
     function handleShowCard(indexCard) {
 
         setShowCard((oldShowCard) => {
-            const newShowCard = [...oldShowCard];
-            newShowCard[indexCard] = !newShowCard[indexCard];
-            return newShowCard;
+            if (multiSelection) {
+                const newShowCard = [...oldShowCard];
+                newShowCard[indexCard] = !newShowCard[indexCard];
+                return newShowCard;
+            } else {
+                const newShowCard = Array(data.length).fill(false);
+                newShowCard[indexCard] = !oldShowCard[indexCard];
+                return newShowCard;
+            }
+
         });
 
     }
 
     return (
         <>
-            <button>Enable Multi Selection</button>
+            <button onClick={() => setMultiSelection(prev => !prev)}>Enable Multi Selection</button>
             <div>
                 {data.map((item, index) => (
                     <AccordionCard
