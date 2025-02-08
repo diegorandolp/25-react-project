@@ -24,6 +24,7 @@ export default function Accordion() {
 
     const [showCard, setShowCard] = useState([false, false, false, false]);
     const [multiSelection, setMultiSelection] = useState(false);
+
     function handleShowCard(indexCard) {
 
         setShowCard((oldShowCard) => {
@@ -42,19 +43,25 @@ export default function Accordion() {
     }
 
     return (
-        <>
-            <button onClick={() => setMultiSelection(prev => !prev)}>Enable Multi Selection</button>
-            <div>
-                {data.map((item, index) => (
-                    <AccordionCard
-                        isShowed={showCard[index]}
-                        key={index}
-                        question={item.question}
-                        answer={item.answer}
-                        handleShowCard={() => handleShowCard(index)}
-                    />
-                ))}
+        <div className="accordion">
+            <div className="flex flex-col gap-5 mx-auto my-44">
+                <button onClick={
+                    () => setMultiSelection(prev => !prev)}
+                        className="accordion-card bg-gray-700 font-bold"
+                >{multiSelection ? "Disable Multi Selection" : "Enable Multi Selection"}</button>
+                <div className="flex flex-col gap-5">
+                    {data.map((item, index) => (
+                        <AccordionCard
+                            isShowed={showCard[index]}
+                            key={index}
+                            question={item.question}
+                            answer={item.answer}
+                            handleShowCard={() => handleShowCard(index)}
+                        />
+                    ))}
+                </div>
             </div>
-        </>
+
+        </div>
     )
 }

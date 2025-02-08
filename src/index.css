@@ -1,23 +1,25 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import "tailwindcss";
 
-.accordion-card-header {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
+@layer components{
+    /* Components */
+    .accordion{
+        @apply w-screen h-screen flex;
+    }
 
-.accordion-card {
-    border: 1px solid #ccc;
-}
+    /* Subcomponents */
+    .accordion-card-header {
+        @apply flex flex-row gap-5 justify-between;
+    }
 
-.compressed-card{
-    display: none;
-}
+    .accordion-card {
+        @apply border border-gray-400 rounded border-solid p-7 bg-gray-500 text-white;
+    }
 
-.showed-card {
-    display: block;
+    .compressed-card{
+        @apply hidden;
+    }
+
+    .showed-card {
+        @apply block;
+    }
 }
