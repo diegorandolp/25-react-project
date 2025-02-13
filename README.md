@@ -7,8 +7,8 @@ A curated list of interactive web components and applications built with React.j
 ## 🎨 UI Components
 
 ### Interactive Elements
-* **Accordion**
-  * Expandable content panels for organizing information in a compact way
+* **Accordion** ✅
+  * Expandable content panels for organizing information in a compact way 
 
 * **Star Rating**
   * Interactive rating component with hover effects and state management
@@ -32,11 +32,14 @@ A curated list of interactive web components and applications built with React.j
 ## 🛠️ Utility Components
 
 ### Theme & Styling
-* **Random Color Generator**
-  * Tool for generating and copying random color codes
+* **Random Color Generator** ✅
+  * Tool for generating and copying random color codes 
 
 * **Light and Dark Mode**
   * Theme switcher with system preference detection and persistent storage
+
+* **Animated Text** ✅
+  * Text with animated gradient effect inspired by 1.1.1.1
 
 ### Custom Hooks
 * **useFetch**

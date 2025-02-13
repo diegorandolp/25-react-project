@@ -27,6 +27,17 @@
         }
     }
 
+    .animated-text {
+        .bg-gradient {
+            background-image: linear-gradient(90deg, #e19d69, #ee0979, #3ba5c9, #ffde00);
+            background-size: 300% 300%;
+        }
+
+        .animate-gradient {
+            animation: gradientMove 5s infinite linear;
+        }
+    }
+
     /* Subcomponents */
     .accordion-card-header {
         @apply flex flex-row gap-5 justify-between;
@@ -43,4 +54,12 @@
     .showed-card {
         @apply block;
     }
+
+
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
