@@ -5,10 +5,16 @@
     body{
         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif ;
     }
+    button {
+        @apply cursor-pointer;
+    }
 }
 
 @layer components{
     /* Components */
+    .rating-stars {
+        @apply h-screen flex items-center justify-center bg-black;
+    }
     .accordion{
         @apply w-screen h-screen flex;
     }

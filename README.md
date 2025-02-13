@@ -10,7 +10,7 @@ A curated list of interactive web components and applications built with React.j
 * **Accordion** ✅
   * Expandable content panels for organizing information in a compact way 
 
-* **Star Rating**
+* **Star Rating** ✅
   * Interactive rating component with hover effects and state management
 
 * **Modal Popup**

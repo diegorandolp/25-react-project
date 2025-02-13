@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const HEX_NUMBERS = '0123456789ABCDEF';
 
@@ -6,6 +6,10 @@ const HEX_NUMBERS = '0123456789ABCDEF';
 export default function RandomColor(){
     const [typeColor, setTypeColor] = useState('hex');
     const [color, setColor] = useState('#d3dbe8');
+
+    useEffect(() => {
+        generateRandom();
+    }, [typeColor]);
 
     function randomInteger(max){
         return Math.floor(Math.random() * max);
