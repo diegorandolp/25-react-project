@@ -5,6 +5,12 @@
     .accordion{
         @apply w-screen h-screen flex;
     }
+    .random-color{
+        button{
+            background-color: rgb(34,30,104);
+            @apply text-white m-5 p-5 rounded-lg;
+        }
+    }
 
     /* Subcomponents */
     .accordion-card-header {
