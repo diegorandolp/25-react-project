@@ -5,7 +5,7 @@ const HEX_NUMBERS = '0123456789ABCDEF';
 
 export default function RandomColor(){
     const [typeColor, setTypeColor] = useState('hex');
-    const [color, setColor] = useState('#000000j');
+    const [color, setColor] = useState('#d3dbe8');
 
     function randomInteger(max){
         return Math.floor(Math.random() * max);
@@ -29,8 +29,10 @@ export default function RandomColor(){
             <h1>Random Color Generator</h1>
             <button onClick={generateRandom}>Generate Random Color</button>
             <p>{color}</p>
-            <button onClick={() => setTypeColor('hex')}>Hex Color</button>
-            <button onClick={() => setTypeColor('rgb')}>RGB Color</button>
+            <div className="flex gap-10">
+                <button onClick={() => setTypeColor('hex')}>Hex Color</button>
+                <button onClick={() => setTypeColor('rgb')}>RGB Color</button>
+            </div>
         </div>
 
     )

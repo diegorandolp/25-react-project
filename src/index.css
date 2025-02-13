@@ -1,14 +1,29 @@
 @import "tailwindcss";
 
+@layer base{
+    /* Base */
+    body{
+        font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif ;
+    }
+}
+
 @layer components{
     /* Components */
     .accordion{
         @apply w-screen h-screen flex;
     }
     .random-color{
+        @apply w-screen h-screen flex flex-col items-center justify-center gap-10;
         button{
             background-color: rgb(34,30,104);
-            @apply text-white m-5 p-5 rounded-lg;
+            @apply text-white m-5 p-7 rounded-lg text-xl font-semibold;
+        }
+        h1{
+            @apply text-7xl font-bold;
+            color: rgb(34,30,104);
+        }
+        p{
+            @apply text-9xl font-extrabold;
         }
     }
 
