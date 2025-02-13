@@ -13,10 +13,26 @@
 @layer components{
     /* Components */
     .rating-stars {
-        @apply h-screen flex items-center justify-center bg-black;
+        @apply h-screen flex items-center justify-center bg-blue-950;
     }
     .accordion{
-        @apply w-screen h-screen flex;
+        @apply w-screen h-screen flex bg-blue-200 font-semibold text-xl;
+
+        .accordion-card-header {
+            @apply flex flex-row gap-8 justify-between;
+        }
+
+        .accordion-card {
+            @apply border border-gray-400 rounded border-solid p-9 bg-gray-500 text-white;
+        }
+
+        .compressed-card{
+            @apply hidden;
+        }
+
+        .showed-card {
+            @apply block;
+        }
     }
     .random-color{
         @apply w-screen h-screen flex flex-col items-center justify-center gap-10;
@@ -44,22 +60,6 @@
         }
     }
 
-    /* Subcomponents */
-    .accordion-card-header {
-        @apply flex flex-row gap-5 justify-between;
-    }
-
-    .accordion-card {
-        @apply border border-gray-400 rounded border-solid p-7 bg-gray-500 text-white;
-    }
-
-    .compressed-card{
-        @apply hidden;
-    }
-
-    .showed-card {
-        @apply block;
-    }
 
 
 }

@@ -62,6 +62,7 @@ export default function RatingStars(){
                         setRating(index+1);
                     }}
                         onMouseOver={() => (handleMouseOver(index+1))}
+                        onMouseLeave={() => (handleMouseOver(0))}
                     >
                         {star}
                     </button>
