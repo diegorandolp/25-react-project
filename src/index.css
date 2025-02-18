@@ -12,6 +12,12 @@
 
 @layer components{
     /* Components */
+    .image-slider {
+        @apply h-screen flex items-center justify-center flex-col;
+        img {
+            @apply max-w-md h-auto rounded-lg;
+        }
+    }
     .rating-stars {
         @apply h-screen flex items-center justify-center bg-blue-950;
     }

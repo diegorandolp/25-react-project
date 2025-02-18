@@ -31,11 +31,22 @@ export default function ImageSlider({count=5}) {
     }, []);
     const [images, setImages] = useState([]);
     const [currentImage, setCurrentImage] = useState(0);
-    console.log(images);
     return (
-        <div>
+        <div className="image-slider">
             <h1>Image Slider</h1>
             <img src={images[currentImage]} alt="random"/>
+            <button
+                onClick={() => {
+                    if (currentImage > 0) {
+                        setCurrentImage(currentImage - 1);
+                    }
+                }}>Prev</button>
+            <button
+                onClick={() => {
+                    if (currentImage < images.length - 1) {
+                        setCurrentImage(currentImage + 1);
+                    }
+            }}>Next</button>
         </div>
     )
 }
