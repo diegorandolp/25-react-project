@@ -15,7 +15,10 @@
     .image-slider {
         @apply h-screen flex items-center justify-center flex-col;
         img {
-            @apply max-w-md h-auto rounded-lg;
+            @apply rounded-lg mt-10;
+        }
+        h1 {
+            @apply text-4xl font-bold;
         }
     }
     .rating-stars {
