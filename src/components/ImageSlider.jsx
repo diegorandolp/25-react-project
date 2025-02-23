@@ -29,14 +29,15 @@ export default function ImageSlider({count=5}) {
             controller.abort();
         }
     }, []);
+    const points = Array.from(Array(count), (_, i) => i);
     const [images, setImages] = useState([]);
     const [currentImage, setCurrentImage] = useState(0);
     return (
         <div className="image-slider">
             <h1>Image Slider</h1>
-            <div className="slider">
+            <div className="relative">
                 <img src={images[currentImage]} alt="random"/>
-                <div className="relative bottom-1/2 flex justify-between mx-4">
+                <div className="flex justify-between mx-4 absolute inset-0">
                     <button
                         onClick={() => {
                             if (currentImage > 0) {
@@ -54,6 +55,12 @@ export default function ImageSlider({count=5}) {
                         <RightArrow/>
                     </button>
                 </div>
+                <div className="flex absolute bottom-4 inset-x-0 justify-center gap-2">
+                    {points.map((point, index) => (
+                        index === currentImage ? <SharpCircle color="white"/> : <SharpCircle color="gray"/>
+                    ))}
+                </div>
+
             </div>
         </div>
     )
@@ -74,7 +81,7 @@ export function LeftArrow(props) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
             >
-                <rect width="14" height="14" fill="white" opacity="0.2" rx="7" />
+                <circle fill="white" opacity="0.5" cx="7" cy="7" r="6.5"></circle>
                 <path d="M8 4L5 7l3 3"></path>
                 <circle cx="7" cy="7" r="6.5"></circle>
             </g>
@@ -98,10 +105,27 @@ export function RightArrow(
                 strokeLinecap="round"
                 strokeLinejoin="round"
             >
-                <rect width="14" height="14" fill="white" opacity="0.2" rx="7" />
+                <circle fill="white" opacity="0.5" cx="7" cy="7" r="6.5"></circle>
                 <path d="m6 4l3 3l-3 3"></path>
                 <circle cx="7" cy="7" r="6.5"></circle>
             </g>
+        </svg>
+    )
+}
+
+export function SharpCircle(props) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="1em"
+            height="1em"
+            {...props}
+        >
+            <path
+                fill="currentColor"
+                d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2"
+            ></path>
         </svg>
     )
 }
