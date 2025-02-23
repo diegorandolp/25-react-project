@@ -18,7 +18,7 @@
             @apply rounded-lg;
         }
         h1 {
-            @apply text-4xl font-bold mb-10;
+            @apply text-6xl font-bold mb-10;
         }
     }
     .rating-stars {

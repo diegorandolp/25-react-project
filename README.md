@@ -16,7 +16,7 @@ A curated list of interactive web components and applications built with React.j
 * **Modal Popup**
   * Customizable modal dialog component with backdrop and animation
 
-* **Load More Button**
+* **Load More Button** ✅
   * Infinite scroll implementation with "Load More" functionality
 
 ### Navigation & Structure

@@ -9,7 +9,6 @@ export default function ImageSlider({count=5}) {
 
         async function getImages(){
             const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${API_KEY}&count=${count}`;
-            const images = [];
             fetch(apiUrl).then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -57,7 +56,9 @@ export default function ImageSlider({count=5}) {
                 </div>
                 <div className="flex absolute bottom-4 inset-x-0 justify-center gap-2">
                     {points.map((point, index) => (
-                        index === currentImage ? <SharpCircle color="white"/> : <SharpCircle color="gray"/>
+                        <button onClick={() => setCurrentImage(index)} key={index}>
+                            {index === currentImage ? <SharpCircle color="white"/> : <SharpCircle color="gray"/>}
+                        </button>
                     ))}
                 </div>
 
