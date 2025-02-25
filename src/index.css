@@ -12,6 +12,12 @@
 
 @layer components{
     /* Components */
+    .load-more-products {
+        @apply flex items-center justify-center flex-col;
+        .product-card {
+            @apply bg-gray-200 p-5 m-5 rounded-lg;
+        }
+    }
     .image-slider {
         @apply h-screen flex items-center justify-center flex-col;
         img {
