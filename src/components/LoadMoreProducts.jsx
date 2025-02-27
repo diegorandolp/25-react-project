@@ -48,7 +48,12 @@ export default function LoadMoreProducts({maxProductsPerRow = 4}) {
                 <div className="flex">
                     {products.slice(item, item + maxProductsPerRow).map((product, key) => (
                         <div className="product-card" key={key}>
-                            <p>{product.title}</p>
+                            <img src={product.images[0]} alt={product.title}/>
+                            <div className="info-product-card">
+                                <h2>{product.title}</h2>
+                                <p className="text-gray-500">Price</p>
+                                <p>{product.price}</p>
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -13,9 +13,20 @@
 @layer components{
     /* Components */
     .load-more-products {
-        @apply flex items-center justify-center flex-col;
+        @apply flex items-center justify-center flex-col text-white;
+        background-color: #121212;
+        h2 {
+            @apply font-bold my-3;
+        }
         .product-card {
-            @apply bg-gray-200 p-5 m-5 rounded-lg;
+            @apply bg-gray-200 m-5 rounded-lg w-64;
+            background-color: #202020;
+        }
+        .info-product-card {
+            @apply p-5;
+        }
+        img {
+            @apply w-full rounded-t-lg;
         }
     }
     .image-slider {
